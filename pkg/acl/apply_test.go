@@ -12,9 +12,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/aiyengar2/permissions/pkg/access"
-	"github.com/aiyengar2/permissions/pkg/filemode"
-	"github.com/aiyengar2/permissions/pkg/sid"
+	"github.com/rancher/permissions/pkg/access"
+	"github.com/rancher/permissions/pkg/filemode"
+	"github.com/rancher/permissions/pkg/sid"
 	"golang.org/x/sys/windows"
 )
 

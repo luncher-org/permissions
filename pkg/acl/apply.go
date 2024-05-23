@@ -7,7 +7,7 @@ import (
 	"io/fs"
 	"os"
 
-	"github.com/aiyengar2/permissions/pkg/filemode"
+	"github.com/rancher/permissions/pkg/filemode"
 	"golang.org/x/sys/windows"
 )
 

@@ -5,8 +5,8 @@ package filemode
 import (
 	"os"
 
-	"github.com/aiyengar2/permissions/pkg/access"
-	"github.com/aiyengar2/permissions/pkg/sid"
+	"github.com/rancher/permissions/pkg/access"
+	"github.com/rancher/permissions/pkg/sid"
 	"golang.org/x/sys/windows"
 )
 

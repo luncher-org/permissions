@@ -1,4 +1,4 @@
-module github.com/aiyengar2/permissions
+module github.com/rancher/permissions
 
 go 1.21
 
