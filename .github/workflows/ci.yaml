@@ -6,6 +6,7 @@ on:
       - '**.go'
       - 'go.mod'
       - 'go.sum'
+      - 'src/**'
   push:
     branches:
       - main
@@ -21,6 +22,8 @@ jobs:
     steps:
       - name: Run checkout
         uses: actions/checkout@v4
+      - name: pester
+        run: Invoke-Pester -Show All
       - name: Install go
         uses: actions/setup-go@v5
         with:
