@@ -4,6 +4,9 @@ BeforeAll {
         "$PSScriptRoot\Permissions.psm1"
     ) -WarningAction Ignore -Force    
 
+    # Add security module
+    Import-Module Microsoft.PowerShell.Security
+
     # Defaults
     $tempFile = New-TemporaryFile
     $DefaultOwner, $DefaultGroup, $DefaultPermissions = Get-Permissions $tempFile.FullName

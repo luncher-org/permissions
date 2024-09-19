@@ -10,9 +10,6 @@
 			"gofmt"
 		]
 	},
-	"run": {
-		"deadline": "5m"
-	},
     "issues": {
         "exclude-rules": []
     }

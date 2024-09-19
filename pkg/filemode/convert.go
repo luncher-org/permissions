@@ -50,5 +50,13 @@ func (m AccessMasks) ToExplicitAccessCustom(owner, group *windows.SID) []windows
 		ea = append(ea, access.GrantSid(m.Everyone, everyone))
 	}
 
+	if owner.IsWellKnown(windows.WinLocalSystemSid) && group.IsWellKnown(windows.WinLocalSystemSid) {
+		// If both the owner and group are LOCAL_SYSTEM, we need to ensure that the BuiltinAdministrators group
+		// also has access to the file. This is needed as the LOCAL_SYSTEM user and group cannot be used by other accounts,
+		// so we would be effectively blocking all human access to the file. sid.CurrentUser and sid.CurrentGroup
+		// will always return LOCAL_SYSTEM when this function is invoked by a Windows service
+		ea = append(ea, access.GrantSid(m.Owner, sid.BuiltinAdministrators()))
+	}
+
 	return ea
 }
